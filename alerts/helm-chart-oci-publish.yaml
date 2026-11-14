@@ -1,0 +1,20 @@
+apiVersion: notification.toolkit.fluxcd.io/v1beta3
+kind: Alert
+metadata:
+  name: helm-chart-oci-publish
+  namespace: cicd
+spec:
+  providerRef:
+    name: git-event-listener
+  inclusionList:
+    - "^stored artifact for commit '.*'$"
+  eventSeverity: info
+  eventMetadata:
+    eventListenerAddress: http://el-helm-chart-oci-publish.cicd.svc.cluster.local:8080/
+    pipelineName: helm-chart-oci-publish
+    chartsDir: addons
+    excludedCharts: cronjob-common
+    registry: oci://${IMAGE_REGISTRY_HOST}/docker-local
+  eventSources:
+    - kind: GitRepository
+      name: nguiland-ops-helm

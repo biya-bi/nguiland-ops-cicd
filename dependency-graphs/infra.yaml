@@ -1,0 +1,9 @@
+apiVersion: cicd.nguiland.io/v1alpha1
+kind: DependencyGraph
+metadata:
+  name: infra
+  namespace: cicd
+spec:
+  repositories:
+    - name: nguiland-ops-docker
+    - name: nguiland-ops-helm
