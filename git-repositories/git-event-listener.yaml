@@ -1,0 +1,17 @@
+apiVersion: source.toolkit.fluxcd.io/v1
+kind: GitRepository
+metadata:
+  name: git-event-listener
+  namespace: cicd
+spec:
+  interval: 1m0s
+  url: ssh://github.com/biya-bi/nguiland-ops-docker.git
+  ref:
+    branch: develop
+  secretRef:
+    name: ssh-credentials
+  ignore: |
+    # Exclude all
+    /*
+    # Include specific relevant directory
+    !/git-event-listener/
