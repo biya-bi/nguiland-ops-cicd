@@ -1,0 +1,18 @@
+apiVersion: notification.toolkit.fluxcd.io/v1beta3
+kind: Alert
+metadata:
+  name: git-event-listener
+  namespace: cicd
+spec:
+  providerRef:
+    name: git-event-listener
+  inclusionList:
+    - "^stored artifact for commit '.*'$"
+  eventSeverity: info
+  eventMetadata:
+    eventListenerAddress: http://el-go-docker.cicd.svc.cluster.local:8080/
+    pipelineName: go-docker
+    contextDir: git-event-listener
+  eventSources:
+    - kind: GitRepository
+      name: git-event-listener
