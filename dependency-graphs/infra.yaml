@@ -5,5 +5,6 @@ metadata:
   namespace: cicd
 spec:
   repositories:
+    - name: git-event-listener
     - name: nguiland-ops-docker
     - name: nguiland-ops-helm
