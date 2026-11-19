@@ -6,5 +6,6 @@ metadata:
 spec:
   repositories:
     - name: git-event-listener
+    - name: ingress-ip-discoverer
     - name: nguiland-ops-docker
     - name: nguiland-ops-helm
