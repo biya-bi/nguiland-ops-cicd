@@ -5,3 +5,4 @@ resources:
   - git-event-listener.yaml
   - helm-chart-oci-publish.yaml
   - ingress-ip-discoverer.yaml
+  - ops-apps-postgres-provisioner.yaml
