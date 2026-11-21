@@ -1,0 +1,20 @@
+apiVersion: notification.toolkit.fluxcd.io/v1beta3
+kind: Alert
+metadata:
+  name: ops-charts-postgres-provisioner
+  namespace: cicd
+spec:
+  providerRef:
+    name: git-event-listener
+  inclusionList:
+    - "^stored artifact for commit '.*'$"
+  eventSeverity: info
+  eventMetadata:
+    eventListenerAddress: http://el-helm-publish.cicd.svc.cluster.local:8080
+    pipelineName: helm-publish
+    pipelineNamespace: cicd
+    chartContext: .
+    repoPath: charts/ops
+  eventSources:
+    - kind: GitRepository
+      name: ops-charts-postgres-provisioner

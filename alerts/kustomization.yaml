@@ -6,3 +6,4 @@ resources:
   - helm-chart-oci-publish.yaml
   - ingress-ip-discoverer.yaml
   - ops-apps-postgres-provisioner.yaml
+  - ops-charts-postgres-provisioner.yaml
