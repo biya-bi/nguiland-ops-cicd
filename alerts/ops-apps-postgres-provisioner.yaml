@@ -13,6 +13,7 @@ spec:
     eventListenerAddress: http://el-go-docker.cicd.svc.cluster.local:8080/
     pipelineName: go-docker
     contextDir: .
+    registrySubPath: ops/apps/postgres-provisioner
   eventSources:
     - kind: GitRepository
       name: ops-apps-postgres-provisioner
