@@ -14,7 +14,7 @@ spec:
     pipelineName: helm-publish
     pipelineNamespace: cicd
     chartContext: .
-    repoPath: charts/ops
+    registrySubpath: ops/charts
   eventSources:
     - kind: GitRepository
       name: ops-charts-postgres-provisioner
