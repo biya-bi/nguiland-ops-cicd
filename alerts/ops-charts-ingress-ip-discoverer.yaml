@@ -1,7 +1,7 @@
 apiVersion: notification.toolkit.fluxcd.io/v1beta3
 kind: Alert
 metadata:
-  name: ingress-ip-discoverer
+  name: ops-charts-ingress-ip-discoverer
   namespace: cicd
 spec:
   providerRef:
@@ -13,8 +13,8 @@ spec:
     eventListenerAddress: http://el-helm-publish.cicd.svc.cluster.local:8080
     pipelineName: helm-publish
     pipelineNamespace: cicd
-    chartContext: addons/ingress-ip-discoverer
-    registrySubpath: ops/charts/ingress-ip-discoverer
+    chartContext: .
+    registrySubpath: ops/charts
   eventSources:
     - kind: GitRepository
-      name: ingress-ip-discoverer
+      name: ops-charts-ingress-ip-discoverer

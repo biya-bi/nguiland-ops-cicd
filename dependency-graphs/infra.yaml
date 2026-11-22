@@ -6,8 +6,8 @@ metadata:
 spec:
   repositories:
     - name: git-event-listener
-    - name: ingress-ip-discoverer
     - name: nguiland-ops-docker
     - name: nguiland-ops-helm
     - name: ops-apps-postgres-provisioner
+    - name: ops-charts-ingress-ip-discoverer
     - name: ops-charts-postgres-provisioner

@@ -4,6 +4,6 @@ resources:
   - docker.yaml
   - git-event-listener.yaml
   - helm.yaml
-  - ingress-ip-discoverer.yaml
   - ops-apps-postgres-provisioner.yaml
+  - ops-charts-ingress-ip-discoverer.yaml
   - ops-charts-postgres-provisioner.yaml
